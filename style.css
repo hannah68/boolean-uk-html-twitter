@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+
 :root{
     --primary-color: #1D9BF0;
-    --secondary-color: #76C1F3;
+    --secondary-color:#f2f2f2 ;
+    --tertiary-color:#76C1F3;
     --border-color:#e6e6e6;
     --text-grey-color: #8c8c8c;
 }
@@ -13,52 +16,58 @@
 
 body{
     font-size: 62.5%;
-    display: grid;
-    grid-template-columns: .5fr 16rem 2fr .5fr;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Header section========================= */
 header{
     height: 100%;
-    text-align: left;
-    grid-column: 2/3;
+    width: 30rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
-nav ul{
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 1rem;
+}
+
+.sidebar ul{
+    padding-left: 18rem;
+    padding-top: 1rem;
     font-size: 1.4rem;
-    display: grid;
-    padding: 1rem 0;
     list-style: none;
     height: 100%;
-    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-nav li {
-    padding: 5px 0;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(8,5px);
-    justify-content: flex-start;
-    align-items: center;
-    margin-right: 1rem;
+.sidebar li {
+    padding: 1rem;
+    width: 100%;
+
+    display: flex;
+    align-items: baseline;
 }
 
 li a{
     text-decoration: none;
     color: #000;
-    grid-column: 2/3;
-    padding: 5px;
 }
 
-li .header-icon{
-    grid-column: 1/2;
-    justify-self: flex-end;
-}
 
-li a:hover{
+ul li:hover{
     background-color: var(--border-color);
     border-radius: 2rem;
 }
@@ -70,9 +79,9 @@ li a:hover{
 }
 
 .tweet-btn{
-    margin-left: 2rem;
+    margin-top: 1rem;
 }
-.tweet-btn .btn{
+.tweet-btn button{
     background-color: var(--primary-color);
     color: #fff;
     width: 12rem;
@@ -83,14 +92,18 @@ li a:hover{
     font-size: 1.4rem;
     
 }
+
+.tweet-btn .btn-hidden{
+    display: none;
+}
 ul li img{
     width: 1.5rem;
     height: 1.5rem;
-    margin-right: 9px;
-    grid-column: 1/2;
-    justify-self: flex-end;
+    margin-right: 1rem;
 }
-
+ul li span{
+    margin-right: 5px;
+}
 .header-icon i{
     width: 2rem;
 }
@@ -98,11 +111,13 @@ ul li img{
 /* header-user-info */
 .user{
     display: flex;
+    gap: 1rem;
     font-size: 1.2rem;
     padding: 1rem;
-    justify-content: space-between;
-    margin-top: 5rem;
-    justify-self: flex-end;
+}
+.user:hover{
+    background-color: var(--border-color);
+    border-radius: 2rem;
 }
 .user .user-name{
     display: flex;
@@ -116,14 +131,13 @@ ul li img{
 
 /* main section=========================================*/
 main{
-    grid-column: 3/4;
+    margin:0 40rem 0 30rem;
     display: flex;
     border-left: 1px solid var(--border-color);
 }
 .main-content{
     display: flex;
     flex-direction: column;
-    width: 80%;
     font-size: 1.5rem;
 }
 .home-title{
@@ -135,6 +149,17 @@ main{
 
 .home-title h1{
     font-size: 1.4rem;
+    
+    
+}
+
+.home-title span{
+    padding: 0 5px;
+}
+
+.home-title span:hover{
+    background-color: var(--border-color);
+    border-radius: 50%;
 }
 
 .home-title img{
@@ -174,82 +199,133 @@ main{
     padding: 1rem;
     
 }
-
-.icon span{
-    padding-right: 1rem;
+.icon{
+    display: flex;
+    gap: 2rem;
 }
 
 .icon i{
     color: var(--primary-color);
+    padding: 8px;
+    transition: all .1s ease-out;
+}
+.icon i:hover{
+    background-color: #cfeafb;
+    border-radius: 50%;
 }
 
 .icons button{
     border: none;
-    background-color: var(--secondary-color);
+    background-color: var(--tertiary-color);
     border-radius: 1rem;
     padding: 7px 1rem;
     color: #fff;
+    cursor: pointer;
 }
 
-
+/* uset posts----------------------------- */
 .user-posts{
     display: flex;
-    flex-direction: column;
-    
-}
-.user-posts-top{
-    display: flex;
-    justify-content: space-between;
     padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.user-posts-bottom p{
-    padding: 0 0 1rem 4rem;
+.user-posts:hover{
+    background-color: var(--secondary-color);
 }
-.pic-name{
-    display: flex;
+.user-posts-img{
+   margin-right: 1rem;
 }
-
-.pic-name .userId{
-    color: var(--text-grey-color);
-}
-.pic-name img{
+.user-posts-img img{
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    margin-right: 1rem;
 }
 
-.user-posts-bottom img{
+.user-posts-content{
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+}
+.user-info{
+    display: flex;
+    justify-content: space-between;
+}
+.user-info .userId{
+    color: var(--text-grey-color);
+    font-weight: normal;
+}
+.user-name{
+    display: flex;
+    gap: 5px;
+}
+.user-info .user-name p{
+    font-weight: 700;
+}
+
+.user-info .user-name p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.user-text{
+    margin-top: 1rem;
+}
+.user-text p{
+    margin-bottom: 1rem;
+}
+
+.user-text img{
     width: 100%;
-    padding: 1rem 1rem 1rem 4rem;
+    border-radius: 1rem;
 }
 .user-likes{
     display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem;
+    gap: 9rem;
+    padding: 1rem 0;
     color: var(--text-grey-color);
 }
 
-.user-likes i{
-    margin-right: 1rem;
-
+.user-likes .comment:hover,
+.user-likes .download:hover{
+    color: var(--primary-color);
 }
-.main-news{
-    width: 40%;
+
+.user-likes .retweet:hover{
+    color: #00e600;
+}
+
+.user-likes .heart:hover{
+    color: #ff4d6a;
+}
+/* footer============ */
+footer{
+    width: 40rem;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow-y: auto;
+
     padding: 1rem 1.5rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     border-left: 1px solid var(--border-color);
 }
 
 .search-container{
-    display: flex;
+    min-width: 20rem;
+    width: 23rem;
     padding: 1rem;
     border-radius: 12rem;
     background-color: var(--border-color);
+
+    display: flex;
 }
+
 .search-icon{
     margin-right: 1rem;
 }
@@ -268,8 +344,12 @@ main{
     outline: none;
 }
 
+
 /* card============== */
 .card{
+    min-width: 20rem;
+    width: 23rem;
+
     margin-top: 3rem;
     background-color: #f2f2f2;
     font-size: 1.3rem;
@@ -283,16 +363,29 @@ main{
 .news{
     margin-bottom: 2rem;
 }
+.news:hover{
+    background-color: var(--border-color);
+}
 
 .news .pColor{
     color: var(--text-grey-color);
 }
 
 /* second-card ===========*/
-.follow{
+.follow-container{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 1rem;
     margin-bottom: 2rem;
+}
+.follow{
+    display: flex;
+}
+
+.username:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .follow img{
@@ -302,76 +395,135 @@ main{
     margin-right: 5px;
 }
 
-.follow button{
+.follow .username{
+    display: flex;
+    flex-direction: column;
+}
+
+.follow-container button{
     background-color: #000;
     color: #fff;
-    width: 6rem;
     border-radius: 1rem;
-    padding: 0;
+    padding: 5px 1rem;
+    cursor: pointer;
 }
 
 /* media query ====================================== */
-@media screen and (max-width: 1600px){
-    body{
-        grid-template-columns: 1fr 3fr;
+@media screen and (max-width: 1770px){
+    header{
+        width: 20rem;
+    }
+
+    main{
+        margin: 0 40rem 0 20rem;
     }
 
 }
 
-@media screen and (max-width: 1052px){
-    .main-news{
+@media screen and (max-width: 1600px){
+    footer{
+        width: 25rem;
+    }
+
+    main{
+        margin: 0 25rem 0 20rem;
+    }
+
+}
+
+@media screen and (max-width: 1366px){
+    header{
+        width: 10rem;
+    }
+    main{
+        margin-left: 10rem;
+    }
+    .sidebar a{
         display: none;
     }
-    .main-content{
-        border-right: 1px solid var(--border-color);
+    .user{
+        padding-right: 2rem;
+        margin-top: 3rem;
     }
-    
-    nav li {
-        grid-template-columns: 1fr;
-    }
-
-    li a{
-        grid-column: none;
-        display: none;
-    }
-
-    li .header-icon{
-        grid-column: 1/-1;
-        justify-self: flex-end;
-    }
-
-    ul li img{
-        grid-column: 1/-1;
-        justify-self: flex-end;
-    }
-
-    .tweet-btn{
-        padding: 0 1.1rem 0 1.5rem;
-        margin-left: 0;
-    }
-    .tweet-btn .btn{
-        width: 2.5rem;
-        height: 2.5rem;
-        padding:1rem;
-        border-radius: 50%;
-        font-size: 5px;
-        /* margin-left: 7rem; */
-        padding-right: 1rem;
-    }
-
-    .user .user-name{
-        display: none;
-    }
-
+    .user .user-name,
     .user span{
         display: none;
     }
 
-    .user{
-        justify-content: flex-end;
+    .tweet-btn button{
+        width: 3rem;
+        padding: 1rem; 
+    }
+
+    .tweet-btn{
+        /* padding-left: 18rem; */
+        display: flex;
+        align-items: flex-end;
+        padding: 1rem; 
+    }
+    .tweet-btn .btn{
+        display: none;
+    }
+    
+    .tweet-btn .btn-hidden{
+        display: inline-block;
     }
     
     
 }
+
+
+@media screen and (max-width: 1200px){
+    header{
+        width: 5rem;
+    }
+    main{
+        margin-left: 5rem;
+    }
+}
+
+@media screen and (max-width: 1134px){
+    footer{
+        width: 20rem;
+    }
+    main{
+        margin-right: 20rem;
+    }
+}
+
+@media screen and (max-width: 1042px){
+    footer{
+        visibility: hidden;
+        width: 10rem;
+    }
+    main{
+        margin-right: 10rem;
+        border-right: 1px solid var(--border-color);
+    }
+}
+
+@media screen and (max-width: 880px){
+    footer{
+        width: 5rem;
+    }
+    main{
+        margin-right: 5rem;
+        border-right: none;
+    }
+}
+
+
+@media screen and (max-width: 448px){
+
+
+    header{
+        bottom: 0;
+        right: 0;
+        height: 4rem;
+        width: 100%;
+        flex-direction: row;
+    }
+}
+
 
 

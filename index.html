@@ -10,38 +10,38 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="sidebar">
             <ul>
                 <li>
                     <i class="fab fa-twitter"></i>
                 </li>
                 <li>
-                    <div class="header-icon"><i class="fas fa-home"></i></div>
+                    <span class="header-icon"><i class="fas fa-home"></i></span>
                     <a href="#home"><strong>Home</strong></a>
                 </li>
                 <li>
-                    <div class="header-icon"><i class="fas fa-hashtag"></i></div>
+                    <span class="header-icon"><i class="fas fa-hashtag"></i></span>
                     <a href="./pages/explore.html">Explore</a>
                 </li>
                 <li>
-                    <div class="header-icon"><i class="far fa-bell"></i></div>
+                    <span class="header-icon"><i class="far fa-bell"></i></span>
                     <a href="./pages/notifications.html">Notifications</a>
                 </li>
                 <li>
-                    <div class="header-icon"><i class="far fa-envelope"></i></div>
-                    <a href="">Messages</a>
+                    <span class="header-icon"><i class="far fa-envelope"></i></span>
+                    <a href="#">Messages</a>
                 </li>
                 <li>
-                    <div class="header-icon"><i class="far fa-bookmark"></i></div>
-                    <a href="">Bookmarks</a>
+                    <span class="header-icon"><i class="far fa-bookmark"></i></span>
+                    <a href="#">Bookmarks</a>
                 </li>
                 <li>
-                    <div class="header-icon"><i class="far fa-list-alt"></i></div>
-                    <a href="">Lists</a>
+                    <span class="header-icon"><i class="far fa-list-alt"></i></span>
+                    <a href="#">Lists</a>
                 </li>
                 <li>
-                    <div class="header-icon"><i class="far fa-user"></i></div>
-                    <a href="">Profile</a>
+                    <span class="header-icon"><i class="far fa-user"></i></div>
+                    <a href="#">Profile</a>
                 </li>
                 <li>
                     <img src="../Images/more.png" alt="more icon">
@@ -50,7 +50,10 @@
             </ul>
 
             <div class="tweet-btn">
-                <button class="btn">Tweet</button>
+                <button>
+                    <span class="btn">Tweet</span>
+                    <span class="btn-hidden"><i class="fas fa-feather-alt"></i></span>
+                </button>
             </div>
         </nav>
 
@@ -92,123 +95,208 @@
                 </div>
             </div>
 
+            <!-- user posts 1---------------------------------------- -->
             <div class="user-posts">
-                <div class="user-posts-top">
-                    <div class="pic-name">
-                        <img src="./Images/user1.jpg" alt="user1">
-                        <p>Sara Smith <span class="userId">@SaraSmith09 .45min</span></p>
+                <!-- user img -->
+                <div class="user-posts-img">
+                    <img src="./Images/user1.jpg" alt="user1">
+                </div>
+                
+                <!-- user content -->
+                <div class="user-posts-content">
+                    <div class="user-info">
+                        <div class="user-name">
+                            <p>Sara Smith</p>
+                            <span class="userId">@SaraSmith09 .45min</span>
+                        </div>
+                        <span><i class="fas fa-ellipsis-h"></i></span>
                     </div>
-                    <span><i class="fas fa-ellipsis-h"></i></span>
-                </div>
-
-                <div class="user-posts-bottom">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non ipsam reprehenderit voluptatibus error ut commodi, veritatis nisi excepturi rerum. Sed doloribus ipsa delectus recusandae placeat, aut beatae odio numquam vero?</p>
-                </div>
-
-                <div class="user-likes">
-                    <span><i class="far fa-comment"></i>1</span>
-                    <span><i class="fas fa-retweet"></i>25</span>
-                    <span><i class="far fa-heart"></i>130</span>
-                    <span><i class="fas fa-download"></i></span>
-                    <span></span>
+                    
+                    <div class="user-text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non ipsam reprehenderit voluptatibus error ut commodi, veritatis nisi excepturi rerum. Sed doloribus ipsa delectus recusandae placeat, aut beatae odio numquam vero?</p>
+                    </div>
+                    
+                    <div class="user-likes">
+                        <div class="comment">
+                            <i class="far fa-comment"></i>
+                            <span class="">1</span>
+                        </div>
+                        <div class="retweet">
+                            <i class="fas fa-retweet"></i>
+                            <span>25</span>
+                        </div>
+                        <div class="heart">
+                            <i class="far fa-heart"></i>
+                            <span>130</span>
+                        </div>
+                        <div class="download">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- user posts 2---------------------------------------- -->
             <div class="user-posts">
-                <div class="user-posts-top">
-                    <div class="pic-name">
-                        <img src="./Images/user5.jpg" alt="user1">
-                        <p>freeCodeCamp <span class="userId">@freeCodeCamp .2h</span></p>
+                <div class="user-posts-img">
+                    <img src="./Images/user5.jpg" alt="user1">
+                </div>
+
+                <div class="user-posts-content">
+                    <div class="user-info">
+                        <div class="user-name">
+                            <p>freeCodeCamp </p>
+                            <span class="userId">@freeCodeCamp .2h</span>
+                        </div>
+                        <span><i class="fas fa-ellipsis-h"></i></span>
                     </div>
-                    <span><i class="fas fa-ellipsis-h"></i></span>
-                </div>
 
-                <div class="user-posts-bottom">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non ipsam reprehenderit voluptatibus error ut commodi, veritatis nisi excepturi rerum. Sed doloribus ipsa delectus recusandae placeat, aut beatae odio numquam vero?</p>
-                    <img src="/Images/coding.jpg" alt="coding pic">
-                </div>
+                    <div class="user-text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non ipsam reprehenderit voluptatibus error ut commodi, veritatis nisi excepturi rerum. Sed doloribus ipsa delectus recusandae placeat, aut beatae odio numquam vero?</p>
+                        <img src="/Images/coding.jpg" alt="coding pic">
+                    </div>
 
-                <div class="user-likes">
-                    <span><i class="far fa-comment"></i>1</span>
-                    <span><i class="fas fa-retweet"></i>25</span>
-                    <span><i class="far fa-heart"></i>130</span>
-                    <span><i class="fas fa-download"></i></span>
-                    <span></span>
+                    <div class="user-likes">
+                        <div class="comment">
+                            <i class="far fa-comment"></i>
+                            <span class="">1</span>
+                        </div>
+                        <div class="retweet">
+                            <i class="fas fa-retweet"></i>
+                            <span>25</span>
+                        </div>
+                        <div class="heart">
+                            <i class="far fa-heart"></i>
+                            <span>130</span>
+                        </div>
+                        <div class="download">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- user posts 3---------------------------------------- -->
+            <div class="user-posts">
+                <!-- user img -->
+                <div class="user-posts-img">
+                    <img src="./Images/user6.jpg" alt="user6">
+                </div>
+                
+                <!-- user content -->
+                <div class="user-posts-content">
+                    <div class="user-info">
+                        <div class="user-name">
+                            <p>Amelia Brown</p>
+                            <span class="userId">@AmeliaBrown .Jan26</span>
+                        </div>
+                        <span><i class="fas fa-ellipsis-h"></i></span>
+                    </div>
+                    
+                    <div class="user-text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non ipsam reprehenderit voluptatibus error ut commodi, veritatis nisi excepturi rerum. Sed doloribus ipsa delectus recusandae placeat, aut beatae odio numquam vero?</p>
+                    </div>
+                    
+                    <div class="user-likes">
+                        <div class="comment">
+                            <i class="far fa-comment"></i>
+                            <span class="">1</span>
+                        </div>
+                        <div class="retweet">
+                            <i class="fas fa-retweet"></i>
+                            <span>25</span>
+                        </div>
+                        <div class="heart">
+                            <i class="far fa-heart"></i>
+                            <span>130</span>
+                        </div>
+                        <div class="download">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        
-        <!-- right section -->
-        <section class="main-news">
-            <div class="search-container">
-                <div class="search-icon">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div>
-                    <input type="text" placeholder="Search Twitter">
-                </div>
-            </div>
-            
-            <!-- first card -->
-            <div class="card">
-                <h3>What's happening?</h3>
+    </main>
 
-                <div class="news-container">
+
+    <!-- right section -->
+    <footer>
+        <div class="search-container">
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <div>
+                <input type="text" placeholder="Search Twitter">
+            </div>
+        </div>
+        
+        <!-- first card -->
+        <div class="card">
+            <h3>What's happening?</h3>
+
+            <div class="news-container">
+                <div class="news">
+                    <p class="pColor">music</p>
+                    <p>Adele shares a teaser for her new single</p>
+                    <p class="pColor">Trending with Adele</p>
+                </div>
+                <div class="news">
                     <div class="news">
                         <p class="pColor">music</p>
                         <p>Adele shares a teaser for her new single</p>
                         <p class="pColor">Trending with Adele</p>
                     </div>
+                </div>
+                <div class="news">
                     <div class="news">
-                        <div class="news">
-                            <p class="pColor">music</p>
-                            <p>Adele shares a teaser for her new single</p>
-                            <p class="pColor">Trending with Adele</p>
-                        </div>
-                    </div>
-                    <div class="news">
-                        <div class="news">
-                            <p class="pColor">music</p>
-                            <p>Adele shares a teaser for her new single</p>
-                            <p class="pColor">Trending with Adele</p>
-                        </div>
+                        <p class="pColor">music</p>
+                        <p>Adele shares a teaser for her new single</p>
+                        <p class="pColor">Trending with Adele</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- second card -->
-            <div class="card">
-                <h3>Who to follow</h3>
+        <!-- second card -->
+        <div class="card">
+            <h3>Who to follow</h3>
 
+            <div class="follow-container">
                 <div class="follow">
                     <img src="/Images/user2.jpg" alt="user2">
-                    <div class="user-name">
+                    <div class="username">
                         <span>Simon Hoiberg</span>
                         <span>@Simon</span>
                     </div>
-                    <button>follow</button>
                 </div>
+                <button>follow</button>
+            </div>
 
+            <div class="follow-container">
                 <div class="follow">
                     <img src="/Images/user4.jpg" alt="user2">
-                    <div class="user-name">
+                    <div class="username">
                         <span>Hanna Jackson</span>
                         <span>@Hanna</span>
                     </div>
-                    <button>follow</button>
                 </div>
+                <button>follow</button>
+            </div>
 
+            <div class="follow-container">
                 <div class="follow">
                     <img src="/Images/user3.jpg" alt="user2">
-                    <div class="user-name">
+                    <div class="username">
                         <span>Charles Cook</span>
                         <span>@Charles</span>
                     </div>
-                    <button>follow</button>
                 </div>
+                <button>follow</button>
             </div>
-        </section>
-    </main>
+        </div>
+    </footer>
 
     
 </body>
